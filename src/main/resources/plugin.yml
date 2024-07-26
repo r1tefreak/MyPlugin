@@ -4,3 +4,12 @@ main: ru.ritefreak.myplugin.MyPlugin
 depend:
   - Vault
 api-version: '1.16'
+
+commands:
+  gm:
+    description: change game mode
+    aliases:
+      - gamemode
+
+  heal:
+    description: heal you!
