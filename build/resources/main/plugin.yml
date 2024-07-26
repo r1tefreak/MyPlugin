@@ -1,0 +1,6 @@
+name: MyPlugin
+version: '1.0-SNAPSHOT'
+main: ru.ritefreak.myplugin.MyPlugin
+depend:
+  - Vault
+api-version: '1.16'
