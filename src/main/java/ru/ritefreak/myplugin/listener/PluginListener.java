@@ -19,13 +19,35 @@ public class PluginListener implements Listener {
     @EventHandler
     private void on(BlockPlaceEvent event) {
         final Block placedBlock = event.getBlockPlaced();
-        for (Ore ore : Ore.values()) {
-            String oreName = ore.name();
+        PlayerPlaceOre playerPlaceOre = new PlayerPlaceOre(event.getPlayer(), placedBlock);
 
-            if (placedBlock.getType().name().contains(oreName)) {
-                PlayerPlaceOre playerPlaceOre = new PlayerPlaceOre(event.getPlayer(), placedBlock);
+        switch (placedBlock.getType()) {
+            case COAL_ORE:
                 Bukkit.getPluginManager().callEvent(playerPlaceOre);
-            }
+                break;
+
+            case IRON_ORE:
+                Bukkit.getPluginManager().callEvent(playerPlaceOre);
+                break;
+
+            case GOLD_ORE:
+                Bukkit.getPluginManager().callEvent(playerPlaceOre);
+                break;
+
+            case DIAMOND_ORE:
+                Bukkit.getPluginManager().callEvent(playerPlaceOre);
+                break;
+
+            case EMERALD_ORE:
+                Bukkit.getPluginManager().callEvent(playerPlaceOre);
+                break;
+
+            case ANCIENT_DEBRIS:
+                Bukkit.getPluginManager().callEvent(playerPlaceOre);
+                break;
+
+            default:
+                break;
         }
     }
 
